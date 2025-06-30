@@ -1,0 +1,25 @@
+.header {
+	padding: 1.88rem 0;
+	// .header__container
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	// .header__logo
+	&__logo {
+		max-width: 16.2875rem;
+		width: 100%;
+		& img {
+			width: 100%;
+		}
+	}
+	// .header__btns
+	&__btns {
+		display: flex;
+		gap: 1rem;
+	}
+	// .header__btn
+	&__btn {
+	}
+}

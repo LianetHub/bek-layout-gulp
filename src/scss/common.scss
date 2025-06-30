@@ -1,0 +1,83 @@
+body {
+	font-family: $fontfamily, sans-serif;
+	font-size: 1rem;
+	min-width: rem($minWidth);
+	min-height: 100%;
+	line-height: normal;
+	color: $text;
+
+	margin-right: 0 !important;
+	&:has(.header.open-menu) {
+		@media (max-width: $md3) {
+			overflow: hidden;
+		}
+	}
+}
+
+// ================== ОБОЛОЧКА ==============================
+
+.wrapper {
+	position: relative;
+	width: 100%;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow-x: clip;
+}
+
+.page {
+	flex: 1 1 auto;
+	// overflow: hidden;
+}
+
+// ================== ОБОЛОЧКА ===============================
+
+// ================== LAYOUT =================================
+
+[class*="__container"] {
+	margin: 0 auto;
+	max-width: 100%;
+	padding: 0 rem(16);
+	@media (min-width: $md5) {
+		box-sizing: content-box;
+		max-width: rem(540);
+	}
+	@media (min-width: $md4) {
+		max-width: rem(720);
+	}
+	@media (min-width: $md3) {
+		max-width: rem(960);
+	}
+	@media (min-width: $md2) {
+		max-width: rem(1140);
+	}
+	@media (min-width: $md1) {
+		max-width: $maxWidthContainer;
+	}
+}
+
+//=============== LAYOUT ===============================
+
+// .swiper-pagination {
+// 	margin-top: 2rem;
+// 	position: static;
+// 	bottom: auto;
+
+// 	display: flex;
+// 	justify-content: center;
+// 	&.swiper-pagination-lock {
+// 		margin-top: 0;
+// 	}
+// 	.swiper-pagination-bullet {
+// 		position: relative;
+// 		width: 0.75rem;
+// 		height: 0.75rem;
+// 		--swiper-pagination-bullet-horizontal-gap: #{rem(6)};
+// 		background: #d9d9d9;
+// 		opacity: 1;
+// 		transition: all 0.3s ease 0s;
+// 		&.swiper-pagination-bullet-active {
+// 			background: $text;
+// 		}
+// 	}
+// }

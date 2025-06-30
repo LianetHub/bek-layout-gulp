@@ -1,0 +1,259 @@
+// Использование модулей SASS
+@use "sass:math";
+// Использование модулей SASS
+// ======================================МИКСИНЫ==============================================
+@import "mixins";
+// ======================================МИКСИНЫ==============================================
+
+// ======================================ШРИФТЫ===============================================
+@import "fonts";
+@import "icons";
+// ======================================ШРИФТЫ===============================================
+
+// Шрифт по умолчанию
+$fontfamily: "Geologica";
+
+// Шрифт по умолчанию
+
+$md0: 1599.98px;
+$md1: 1399.98px;
+$md2: 1279.98px;
+$md3: 1023.98px;
+$md4: 767.98px;
+$md5: 575.98px;
+$md6: 389.98px;
+
+// ПЕРЕМЕННЫЕ
+
+$minWidth: 320; // Минимальная ширина страницы
+$maxWidth: 1920; // Ширина макета
+$maxWidthContainer: rem(1240); // Максимальная ширина ограничивающего контейнера
+$containerPadding: 30;
+
+// ЦВЕТА
+
+$text: #000;
+
+// Z-Index
+
+$ui-index-1: 1; // Для наполняющих элементов в общем потоке
+$ui-index-2: 2; // Для наполняющих элементов в общем потоке
+$ui-index-3: 3; // Для масок
+$ui-index-4: 4; // Для сайдбаров
+$ui-index-5: 5; // Для модалок
+$ui-index-6: 6; // Для элементов, перекрывающих все
+
+// ОБЩИЕ ПАРАМЕТРЫ
+
+// @import "grid";
+@import "ui";
+@import "forms";
+@import "common";
+@import "header";
+@import "footer";
+
+//=======================================
+
+.promo {
+	padding-bottom: 3rem;
+	// .promo__container
+	&__container {
+	}
+	// .promo__header
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+	// .promo__offer
+	&__offer {
+		flex: 1 1 auto;
+		padding-top: 5.4rem;
+	}
+	// .promo__title
+	&__title {
+		margin-right: -8rem;
+	}
+	// .promo__desc
+	&__desc {
+		margin-top: 3.7rem;
+		font-size: 1.5rem;
+		font-weight: 100;
+	}
+	// .promo__btn
+	&__btn {
+		margin-top: 3rem;
+		min-width: rem(347);
+	}
+	// .promo__image
+	&__image {
+		position: relative;
+		flex: 0 0 rem(930);
+		margin-right: -11.3rem;
+		& img {
+			position: relative;
+			z-index: 2;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			top: -15px;
+			left: -89px;
+			width: 1210px;
+			height: 919px;
+			background: url("@img/decor.svg") 0 0 / contain no-repeat;
+			z-index: 1;
+			pointer-events: none;
+		}
+	}
+	// .promo__footer
+	&__footer {
+		margin-top: -14rem;
+		background-color: #f0f7fe;
+		border-radius: 1.25rem;
+		padding: 4rem 3.2rem;
+	}
+	// .promo__caption
+	&__caption {
+		max-width: 41rem;
+	}
+	// .promo__list
+	&__list {
+		margin-top: 2.7rem;
+		font-size: rem(24);
+		font-weight: 100;
+		columns: 2;
+		& li {
+			break-inside: avoid;
+			position: relative;
+			padding-left: 1.3rem;
+			&::before {
+				content: "";
+				position: absolute;
+				top: rem(12);
+				left: 0;
+				border-radius: 50%;
+				width: rem(6);
+				height: rem(6);
+				background: #ff3d00;
+			}
+			&:not(:last-child) {
+				margin-bottom: 1.6rem;
+			}
+		}
+	}
+}
+
+.problem {
+	padding: 3rem 0;
+	// .problem__container
+	&__container {
+	}
+	// .problem__title
+	&__title {
+		max-width: rem(720);
+	}
+	// .problem__desc
+	&__desc {
+		margin-top: 3.5rem;
+		max-width: rem(620);
+	}
+	// .problem__images
+	&__images {
+		margin-top: 4.5rem;
+		margin-left: -1.5rem;
+		margin-right: -1.5rem;
+		display: flex;
+		justify-content: space-between;
+	}
+	// .problem__image
+	&__image {
+	}
+	// .problem__bottom
+	&__bottom {
+		margin-top: 4.75rem;
+	}
+	// .problem__caption
+	&__caption {
+	}
+	// .problem__list
+	&__list {
+		margin-top: 3.25rem;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+	// .problem__item
+	&__item {
+		counter-increment: num;
+		&::before {
+			content: counter(num);
+			color: #fe4001;
+			font-size: rem(72);
+			font-weight: 500;
+		}
+	}
+	// .problem__item-caption
+	&__item-caption {
+		margin-top: 0.25rem;
+		font-size: rem(24);
+	}
+	// .problem__item-desc
+	&__item-desc {
+		margin-top: 1rem;
+		font-size: rem(24);
+		font-weight: 100;
+		max-width: rem(240);
+	}
+}
+
+.solution {
+	padding: 3rem 0;
+	// .solution__container
+	&__container {
+	}
+	// .solution__body
+	&__body {
+		background-color: #f0f7fe;
+		border-radius: rem(20);
+		padding: 3.25rem 2.65rem 3.75rem;
+		display: flex;
+		position: relative;
+		overflow: hidden;
+		z-index: 1;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 27%;
+			left: 64%;
+			width: 1210px;
+			height: 919px;
+			background: url("@img/decor.svg") 0 0 / contain no-repeat;
+			z-index: -1;
+			pointer-events: none;
+		}
+	}
+	// .solution__main
+	&__main {
+	}
+	// .solution__title
+	&__title {
+	}
+	// .solution__subtitle
+	&__subtitle {
+		margin-top: 4.2rem;
+		max-width: 22.5rem;
+		padding-left: 0.5rem;
+	}
+	// .solution__text
+	&__text {
+		margin-top: 2.5rem;
+		font-size: rem(24);
+		font-weight: 100;
+		line-height: 1.2;
+		padding-left: 0.5rem;
+	}
+	// .solution__image
+	&__image {
+		flex: 0 0 23.5rem;
+	}
+}
