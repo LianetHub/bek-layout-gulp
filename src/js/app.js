@@ -115,6 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         input.value = formattedInputValue;
     }
+
     var onPhoneKeyDown = function (e) {
         // Clear input after remove last symbol
         var inputValue = e.target.value.replace(/\D/g, '');
@@ -122,6 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
             e.target.value = "";
         }
     }
+
     for (var phoneInput of phoneInputs) {
         phoneInput.addEventListener('keydown', onPhoneKeyDown);
         phoneInput.addEventListener('input', onPhoneInput, false);
@@ -131,53 +133,65 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // click handlers
     document.addEventListener('click', (e) => {
-
         const target = e.target;
 
+        function closeAllMenus() {
+            document.querySelectorAll('.submenu.open').forEach(menu => {
+                menu.classList.remove('open');
+                const button = menu.previousElementSibling;
+                if (button && button.classList.contains('menu__arrow')) {
+                    button.classList.remove('active');
+                }
+            });
+
+            document.querySelectorAll('.header__services-menu.open').forEach(menu => {
+                menu.classList.remove('open');
+                const button = menu.previousElementSibling;
+                if (button && button.classList.contains('header__services-btn')) {
+                    button.classList.remove('active');
+                }
+            });
+        }
 
         if (target.closest('.icon-menu') || target.classList.contains('menu__close')) {
-            getMenu()
+            getMenu();
+            // Если открывается основное меню, возможно, стоит закрыть все подменю
+            // closeAllMenus(); 
         }
 
         if (target.classList.contains('menu__arrow')) {
+            const subMenu = target.nextElementSibling;
 
-            let subMenu = target.nextElementSibling;
+            if (subMenu.classList.contains('open')) {
+                subMenu.classList.remove('open');
+                target.classList.remove('active');
+            } else {
 
-            if (document.querySelector('.menu__arrow.active') !== target) {
-
-                if (document.querySelector('.submenu.open')) {
-                    document.querySelector('.submenu.open').classList.remove('open');
-                }
-                if (document.querySelector('.menu__arrow.active')) {
-                    document.querySelector('.menu__arrow.active').classList.remove('active');
-                }
+                closeAllMenus();
+                subMenu.classList.add('open');
+                target.classList.add('active');
             }
-
-            subMenu.classList.toggle('open');
-            target.classList.toggle('active');
-
         }
 
         if (target.classList.contains('header__services-btn')) {
             const serviceMenu = target.nextElementSibling;
 
 
-            document.querySelectorAll('.header__services-menu.open').forEach(menu => {
-                if (menu !== serviceMenu) {
-                    menu.classList.remove('open');
-                    menu.previousElementSibling.classList.remove('active');
-                }
-            });
+            if (serviceMenu.classList.contains('open')) {
+                serviceMenu.classList.remove('open');
+                target.classList.remove('active');
+            } else {
 
-
-            serviceMenu.classList.toggle('open');
-            target.classList.toggle('active');
+                closeAllMenus();
+                serviceMenu.classList.add('open');
+                target.classList.add('active');
+            }
         }
 
-
-
+        if (!target.closest('.header__services-block') && !target.closest('.menu__arrow') && !target.classList.contains('menu__arrow')) {
+            closeAllMenus();
+        }
     });
-
 
 
     function getMenu() {
@@ -233,12 +247,17 @@ document.addEventListener("DOMContentLoaded", () => {
         new Swiper('.partners__slider', {
             slidesPerView: 'auto',
             spaceBetween: 8,
-            centeredSlides: true,
+
             speed: 500,
             loop: true,
             navigation: {
                 nextEl: '.partners__next',
                 prevEl: '.partners__prev',
+            },
+            breakpoints: {
+                1599.98: {
+                    centeredSlides: true,
+                },
             },
         })
     }

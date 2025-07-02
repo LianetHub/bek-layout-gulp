@@ -135,19 +135,25 @@
 	user-select: none;
 	transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 
-	padding: 1.125rem 1.5rem;
 	font-size: 0.9375rem;
 	border-radius: 0.25rem;
 	line-height: 1;
 	gap: 0.62rem;
+	padding: 1rem 1.25rem;
 	text-transform: uppercase;
+	@media (min-width: $md0) {
+		padding: 1.125rem 1.5rem;
+	}
 	&::before {
 		order: 1;
 	}
 
 	&.icon-chevron-down {
 		gap: 0.37rem;
-		padding: 1.125rem 1rem 1.125rem 1.5rem;
+		padding: 1rem 0.625rem 1rem 1.25rem;
+		@media (min-width: $md0) {
+			padding: 1.125rem 1rem 1.125rem 1.5rem;
+		}
 		&::before {
 			font-size: 0.75rem;
 			height: 0.75rem;
@@ -218,7 +224,10 @@
 	}
 
 	&.btn-lg {
-		padding: 1.5rem 2.125rem;
+		padding: 1.25rem 1.5rem;
+		@media (min-width: $md4) {
+			padding: 1.5rem 2.125rem;
+		}
 	}
 
 	&.btn-fullwidth {
@@ -246,29 +255,5 @@
 		&:active,
 		&.active {
 		}
-	}
-}
-
-.iti__selected-flag {
-	background-color: rgba(0, 0, 0, 0.05);
-}
-
-.select {
-	position: relative;
-	& select {
-		appearance: none;
-		background: transparent;
-		border: rem(1) solid $text;
-		border-radius: rem(6);
-		color: $text;
-		font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-			"Segoe UI Symbol", "Noto Color Emoji";
-		display: block;
-		font-size: 1rem;
-		font-weight: 500;
-		height: 100%;
-		outline: none;
-		padding: 1em em(37) 1em em(23);
-		width: 100%;
 	}
 }

@@ -16,18 +16,17 @@ $fontfamily: "Stem";
 // Шрифт по умолчанию
 
 $md0: 1599.98px;
-$md1: 1399.98px;
-$md2: 1279.98px;
-$md3: 1023.98px;
+$md1: 1329.98px;
+$md2: 1199.98px;
+$md3: 991.98px;
 $md4: 767.98px;
 $md5: 575.98px;
-$md6: 389.98px;
 
 // ПЕРЕМЕННЫЕ
 
 $minWidth: 320; // Минимальная ширина страницы
 $maxWidth: 1920; // Ширина макета
-$maxWidthContainer: rem(1240); // Максимальная ширина ограничивающего контейнера
+$maxWidthContainer: rem(1284); // Максимальная ширина ограничивающего контейнера
 $containerPadding: 30;
 
 // ЦВЕТА
@@ -59,11 +58,11 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	&__container {
 		.row {
 			--gutter-x: 0;
+			--gutter-y: 0;
 		}
 	}
 	// .promo__main
 	&__main {
-		margin-right: -2rem;
 		position: relative;
 		z-index: 1;
 		display: flex;
@@ -77,11 +76,24 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 			content: "";
 			position: absolute;
 			top: 0;
-			right: 0;
+			left: 50%;
+			transform: translateX(-50%);
 			width: 100vw;
 			height: 100%;
-			background: url("@img/icons/arrows-blue.svg") calc(100% - 3.12rem) 3.12rem / 21rem auto no-repeat, #203299;
 			z-index: -1;
+			min-width: rem(320);
+			background: url("@img/icons/arrows-blue.svg") calc(100% - 1.12rem) 1.12rem / 4rem auto no-repeat, #203299;
+			@media (min-width: $md5) {
+				background: url("@img/icons/arrows-blue.svg") calc(100% - 3.12rem) 3.12rem / 8rem auto no-repeat, #203299;
+			}
+			@media (min-width: $md3) {
+				right: 0;
+				left: auto;
+				transform: none;
+			}
+			@media (min-width: $md2) {
+				background: url("@img/icons/arrows-blue.svg") calc(100% - 3.12rem) 3.12rem / 21rem auto no-repeat, #203299;
+			}
 		}
 		&::after {
 			content: "";
@@ -95,13 +107,34 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 			filter: blur(rem(150));
 			z-index: -1;
 		}
+		@media (min-width: $md3) {
+			margin-right: -2.75rem;
+		}
+		@media (min-width: $md0) {
+			margin-right: -2rem;
+		}
 	}
+	// .promo__image
 	&__image {
-		width: 29.947rem;
 		flex-shrink: 0;
-		margin-right: -7rem;
-		margin-bottom: -12rem;
 		margin-left: -7rem;
+		align-self: flex-end;
+		margin-bottom: -4rem;
+		width: 12rem;
+		margin-right: -2.5rem;
+		@media (min-width: $md5) {
+			margin-right: -5.3rem;
+			width: 19rem;
+		}
+		@media (min-width: $md2) {
+			align-self: stretch;
+			margin-bottom: -12rem;
+			width: 24.84669rem;
+		}
+		@media (min-width: $md0) {
+			margin-right: -7rem;
+			width: 29.947rem;
+		}
 	}
 	// .promo__slider
 	&__slider {
@@ -116,12 +149,22 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 		display: flex;
 		flex-direction: column;
 		gap: 1.25rem;
-		max-width: 36rem;
+		max-width: 24rem;
 		& span {
 			color: #7db2ff;
-			font-size: 4rem;
 			line-height: 1;
 			display: block;
+			font-size: em(3, 2.125);
+			@media (min-width: $md5) {
+				font-size: em(3.375, 2.125);
+			}
+			@media (min-width: $md0) {
+				font-size: em(4, 2.75);
+			}
+		}
+
+		@media (min-width: $md0) {
+			max-width: 36rem;
 		}
 	}
 	// .promo__slide-btn
@@ -130,11 +173,19 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	}
 	// .promo__slider-footer
 	&__slider-footer {
-		margin-top: 5.5rem;
 		display: flex;
-		align-items: center;
-		justify-content: space-between;
 		gap: 1rem;
+		flex-direction: column;
+		margin-top: 2rem;
+		@media (min-width: $md2) {
+			margin-top: 4rem;
+			align-items: center;
+			justify-content: space-between;
+			flex-direction: row;
+		}
+		@media (min-width: $md0) {
+			margin-top: 5.5rem;
+		}
 	}
 	// .promo__slider-controls
 	&__slider-controls {
@@ -151,34 +202,58 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 		color: rgba(255, 255, 255, 0.14);
 		font-size: 0.875rem;
 		line-height: 142.857%;
-		letter-spacing: 0.35rem;
 		text-transform: uppercase;
-		white-space: nowrap;
+		letter-spacing: 0.25rem;
+		max-width: 15rem;
+		@media (min-width: $md5) {
+			max-width: 100%;
+			white-space: nowrap;
+		}
+		@media (min-width: $md4) {
+			letter-spacing: 0.35rem;
+		}
 	}
 	// .promo__news
 	&__news {
-		padding: 4.19rem 0 4.19rem 4.25rem;
 		background: #f0f4fa;
-		margin-left: 2rem;
+
 		position: relative;
 		min-height: 100%;
 		z-index: 2;
+		padding: 2rem 0;
 		&::before {
 			content: "";
 			position: absolute;
 			top: 0;
-			left: 0;
 			width: 100vw;
+			min-width: rem(320);
 			height: 100%;
 			background: #f0f4fa;
 			z-index: -1;
+			left: 50%;
+			transform: translateX(-50%);
+			@media (min-width: $md3) {
+				left: 0;
+				transform: none;
+			}
+		}
+		@media (min-width: $md5) {
+			padding: 3.37rem 0;
+		}
+		@media (min-width: $md3) {
+			padding: 3.37rem 0 3.37rem 2.81rem;
+			margin-left: 2.75rem;
+		}
+		@media (min-width: $md0) {
+			margin-left: 2rem;
+			padding: 4.19rem 0 4.19rem 4.25rem;
 		}
 	}
 	// .promo__news-title
 	&__news-title {
 		display: flex;
 		justify-content: space-between;
-		align-items: center;
+		align-items: flex-start;
 		&::before {
 			order: 1;
 			width: 4.25rem;
@@ -195,7 +270,9 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	}
 	// .promo__news-list
 	&__news-list {
-		margin-top: rem(20);
+		@media (min-width: $md0) {
+			margin-top: rem(20);
+		}
 	}
 	// .promo__news-item
 	&__news-item {
@@ -215,11 +292,14 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	}
 	// .promo__news-link
 	&__news-link {
-		font-size: 1.125rem;
 		line-height: 144.444%;
 		max-width: 31rem;
 		transition: color 0.3s ease;
 		text-underline-position: from-font;
+		font-size: 1.0625rem;
+		@media (min-width: $md0) {
+			font-size: 1.125rem;
+		}
 		@media (any-hover: hover) {
 			&:hover {
 				color: #3972c4;
@@ -230,7 +310,13 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 }
 
 .services {
-	padding: 7.5rem 0 3.75rem;
+	padding: 4rem 0 2rem;
+	@media (min-width: $md4) {
+		padding: 6.25rem 0 3.15rem;
+	}
+	@media (min-width: $md0) {
+		padding: 7.5rem 0 3.75rem;
+	}
 	// .services__container
 	&__container {
 	}
@@ -243,8 +329,11 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 		margin-top: rem(15);
 		color: rgba(40, 43, 60, 0.6);
 		text-align: center;
-		font-size: 1.875rem;
 		line-height: 1;
+		font-size: 1.25rem;
+		@media (min-width: $md4) {
+			font-size: 1.875rem;
+		}
 	}
 	// .services__list
 	&__list {
@@ -271,9 +360,12 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	&__name {
 		margin-top: 1.75rem;
 		color: #203299;
-		font-size: 1.5rem;
 		line-height: 125%;
 		text-transform: uppercase;
+		font-size: 1.25rem;
+		@media (min-width: $md4) {
+			font-size: 1.5rem;
+		}
 	}
 	// .service__list
 	&__list {
@@ -284,6 +376,10 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 		position: relative;
 		padding-left: 1.75rem;
 		line-height: 137.5%;
+		font-size: 0.875rem;
+		@media (min-width: $md4) {
+			font-size: 1rem;
+		}
 		&::before {
 			content: "";
 			position: absolute;
@@ -313,7 +409,10 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 }
 
 .info {
-	padding: 3.75rem 0 4.12rem 0;
+	padding: 3.15rem 0 3.125rem;
+	@media (min-width: $md0) {
+		padding: 3.75rem 0 4.12rem 0;
+	}
 	// .info__container
 	&__container {
 	}
@@ -321,7 +420,7 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	&__block {
 		border-radius: 0.25rem;
 		background: #f0f4fa;
-		padding: 5.13rem 6.13rem;
+
 		position: relative;
 		&::after {
 			content: "";
@@ -343,13 +442,24 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 			height: 5rem;
 			background: #e2e8f2;
 		}
+		padding: 2rem 1.5rem;
+		@media (min-width: $md5) {
+			padding: 2rem 4rem 2rem 4.25rem;
+		}
+		@media (min-width: $md4) {
+			padding: 5.56rem 7.06rem 5.56rem 4.25rem;
+		}
+		@media (min-width: $md0) {
+			padding: 5.13rem 6.13rem;
+		}
 	}
 	// .info__block-text
 	&__block-text {
-		font-size: 1.125rem;
-		line-height: 166.667%;
+		font-size: 1.0625rem;
+		line-height: 141.176%;
 		display: flex;
 		align-items: flex-start;
+		flex-direction: column;
 		gap: 2.88rem;
 		&::before {
 			width: 5rem;
@@ -363,11 +473,25 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 			color: #3972c4;
 			border-radius: 50%;
 		}
+
+		@media (min-width: $md4) {
+			flex-direction: row;
+		}
+		@media (min-width: $md0) {
+			font-size: 1.125rem;
+			line-height: 166.667%;
+		}
 	}
 }
 
 .team {
-	padding: 4rem 0 3.75rem;
+	padding: 2rem 0;
+	@media (min-width: $md4) {
+		padding: 3.125rem 0;
+	}
+	@media (min-width: $md0) {
+		padding: 4rem 0 3.75rem;
+	}
 	// .team__container
 	&__container {
 	}
@@ -378,41 +502,65 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	// .team__image
 	&__image {
 		margin-top: 3.12rem;
-		margin-bottom: -18.25rem;
+		@media (min-width: $md0) {
+			margin-bottom: -18.25rem;
+		}
+		& img {
+			width: 100%;
+		}
 	}
 	// .team__body
 	&__body {
 		.row {
 			--gutter-x: 0;
+			--gutter-y: 0;
 		}
 	}
 	// .team__desc
 	&__desc {
 		background: #f0f4fa;
-		padding: 6.25rem 9.43rem 6.25rem 0;
 		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		margin-right: 3.75rem;
+		flex-direction: column-reverse;
 		position: relative;
 		z-index: 1;
-		gap: 8.87rem;
+		gap: 2.87rem;
+		padding: 4.25rem 0;
+		@media (min-width: $md3) {
+			padding: 5.25rem 2.62rem 7.5rem 0;
+		}
 		&::before {
 			content: "";
 			position: absolute;
 			top: 0;
-			right: 0;
 			width: 100vw;
 			height: 100%;
 			background: #f0f4fa;
 			z-index: -1;
+			min-width: rem(320);
+			left: 50%;
+			transform: translateX(-50%);
+			@media (min-width: $md3) {
+				right: 0;
+				left: auto;
+				transform: none;
+			}
+		}
+		@media (min-width: $md0) {
+			padding: 6.25rem 9.43rem 6.25rem 0;
+			gap: 8.87rem;
+			align-items: center;
+			justify-content: space-between;
+			flex-direction: row;
+			margin-right: 3.75rem;
 		}
 	}
 	// .team__desc-body
 	&__desc-body {
 		text-align: justify;
-		font-size: 1.125rem;
 		line-height: 144.444%;
+		@media (min-width: $md5) {
+			font-size: 1.125rem;
+		}
 		& p {
 			&:not(:last-child) {
 				margin-bottom: 1rem;
@@ -421,8 +569,11 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	}
 	// .team__desc-logo
 	&__desc-logo {
-		width: 10.00625rem;
 		flex-shrink: 0;
+		width: 15.5rem;
+		@media (min-width: $md0) {
+			width: 10.00625rem;
+		}
 	}
 	// .team__list
 	&__list {
@@ -431,36 +582,51 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 		background: #1e2f91;
 		min-height: 100%;
 		color: #fff;
-		margin-left: -3.75rem;
-		padding: 8.62rem 0 8.62rem 3.87rem;
+		padding: 4rem 0;
+		@media (min-width: $md3) {
+			padding: 5.62rem 0 5.62rem 2.44rem;
+		}
 		&::before {
 			content: "";
 			position: absolute;
 			top: 0;
-			left: 0;
 			width: 100vw;
 			height: 100%;
 			background: #1e2f91;
 			z-index: -1;
+			left: 50%;
+			min-width: rem(320);
+			transform: translateX(-50%);
+			@media (min-width: $md3) {
+				left: 0;
+				transform: none;
+			}
 		}
-		&::after {
-			content: "";
-			position: absolute;
-			top: 3rem;
-			right: -9rem;
-			width: 8rem;
-			height: 8rem;
-			pointer-events: none;
-			background: url("@img/icons/arrows-blue.svg") 0 0 / 8rem auto no-repeat;
+		@media (min-width: $md0) {
+			padding: 8.62rem 0 8.62rem 3.87rem;
+			margin-left: -3.75rem;
+			&::after {
+				content: "";
+				position: absolute;
+				top: 3rem;
+				right: -9rem;
+				width: 8rem;
+				height: 8rem;
+				pointer-events: none;
+				background: url("@img/icons/arrows-blue.svg") 0 0 / 8rem auto no-repeat;
+			}
 		}
 	}
 	// .team__list-item
 	&__list-item {
 		color: #fff;
-		font-size: 1.25rem;
-		line-height: 130%;
+
+		line-height: 144.444%;
 		padding-left: 2.75rem;
 		position: relative;
+		@media (min-width: $md5) {
+			font-size: 1.125rem;
+		}
 		&:not(:last-child) {
 			margin-bottom: 1.5rem;
 			padding-bottom: 1.5rem;
@@ -475,11 +641,21 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 			height: 1.75rem;
 			background: url("@img/icons/arrows-blue.svg") center / 1rem no-repeat;
 		}
+		@media (min-width: $md0) {
+			line-height: 130%;
+			font-size: 1.25rem;
+		}
 	}
 }
 
 .partners {
-	padding: 3.75rem 0;
+	padding: 2rem 0;
+	@media (min-width: $md4) {
+		padding: 3.125rem 0;
+	}
+	@media (min-width: $md0) {
+		padding: 3.75rem 0;
+	}
 	// .partners__container
 	&__container {
 	}
@@ -487,17 +663,24 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	&__header {
 		display: flex;
 		justify-content: space-between;
-		align-items: center;
+		flex-direction: column;
+		@media (min-width: $md5) {
+			align-items: center;
+			flex-direction: row;
+		}
 	}
 	// .partners__title
 	&__title {
 	}
 	// .partners__controls
 	&__controls {
-		display: flex;
-		align-items: center;
-		gap: 3.75rem;
-		color: #3972c4;
+		display: none;
+		@media (min-width: $md5) {
+			display: flex;
+			align-items: center;
+			gap: 3.75rem;
+			color: #3972c4;
+		}
 	}
 	// .partners__prev
 	&__prev {
@@ -515,20 +698,35 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 		border-radius: 0.25rem;
 		border: 1px solid rgba(169, 185, 208, 0.5);
 		background: #fbfdff;
-		height: 10.875rem;
-		width: 18.75rem;
+
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		height: 8.15625rem;
+		width: 14.0625rem;
+		padding: 2rem;
+		@media (min-width: $md3) {
+			height: 10.875rem;
+			width: 18.75rem;
+		}
 		& img {
-			max-height: 8rem;
 			width: auto;
+			max-height: 6rem;
+			@media (min-width: $md3) {
+				max-height: 8rem;
+			}
 		}
 	}
 }
 
 .why {
-	padding: 3.75rem 0 7.5rem;
+	padding: 2rem 0 4rem;
+	@media (min-width: $md4) {
+		padding: 3.125rem 0 6.25rem;
+	}
+	@media (min-width: $md0) {
+		padding: 3.75rem 0 7.5rem;
+	}
 	// .why__container
 	&__container {
 	}
@@ -545,7 +743,7 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 		min-height: 100%;
 		border-radius: 0.25rem;
 		background: linear-gradient(180deg, #f6faff 0%, #f0f4fa 100%);
-		padding: 3.44rem 2.5rem 3rem;
+
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
@@ -570,31 +768,50 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 			height: 3.375rem;
 			background: #e2e8f2;
 		}
+		padding: 3.44rem 1.87rem 3rem;
+		@media (min-width: $md0) {
+			padding: 3.44rem 2.5rem 3rem;
+		}
 	}
 	// .why__card-icon
 	&__card-icon {
-		width: 4.75rem;
-		height: 4.75rem;
 		flex-shrink: 0;
 		border-radius: 50%;
 		background: #3972c4;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		width: 4rem;
+		height: 4rem;
+		padding: 0.75rem;
+		@media (min-width: $md5) {
+			width: 4.75rem;
+			height: 4.75rem;
+		}
 	}
 	// .why__card-name
 	&__card-name {
 		margin-top: 1.56rem;
 		color: #203299;
-		font-size: 1.5rem;
 		line-height: 125%;
 		text-transform: uppercase;
+		font-size: 1.25rem;
+		@media (min-width: $md0) {
+			font-size: 1.5rem;
+		}
 	}
 	// .why__card-desc
 	&__card-desc {
 		margin-top: 0.87rem;
-		font-size: 1.125rem;
-		line-height: 133.333%;
+		line-height: 150%;
+		font-size: 0.875rem;
+		@media (min-width: $md4) {
+			font-size: 1rem;
+		}
+		@media (min-width: $md0) {
+			font-size: 1.125rem;
+			line-height: 133.333%;
+		}
 	}
 }
 
@@ -602,19 +819,9 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	border-radius: 0.25rem;
 	background: #203299;
 	color: #fff;
-	padding: 6.25rem 0 6.5rem;
+	padding: 4rem 0;
 	position: relative;
 	overflow: hidden;
-	&::after {
-		content: "";
-		position: absolute;
-		top: 4rem;
-		right: 4rem;
-		width: 10rem;
-		height: 10rem;
-		pointer-events: none;
-		background: url("@img/icons/arrows-blue.svg") 0 0 / 10rem auto no-repeat;
-	}
 	&::before {
 		content: "";
 		position: absolute;
@@ -627,9 +834,26 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 		background: rgba(125, 178, 255, 0.7);
 		filter: blur(rem(250));
 	}
+	@media (min-width: $md4) {
+		padding: 6.25rem 0 6.5rem;
+	}
+	@media (min-width: $md0) {
+		&::after {
+			content: "";
+			position: absolute;
+			top: 4rem;
+			right: 4rem;
+			width: 10rem;
+			height: 10rem;
+			pointer-events: none;
+			background: url("@img/icons/arrows-blue.svg") 0 0 / 10rem auto no-repeat;
+		}
+	}
 	// .scheme__container
 	&__container {
-		max-width: rem(1300);
+		@media (min-width: $md1) {
+			max-width: rem(1300);
+		}
 	}
 	// .scheme__title
 	&__title {
@@ -637,21 +861,32 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	}
 	// .scheme__list
 	&__list {
-		margin-top: 4.19rem;
 		font-size: 1.125rem;
 		line-height: 133.333%;
 		display: flex;
-		justify-content: space-between;
-		gap: 1.13rem;
-		padding: 6.5rem 0;
+
+		flex-direction: column;
+		margin-top: 2.5rem;
+		@media (min-width: $md3) {
+			margin-top: 5rem;
+			gap: 1.13rem;
+			padding: 6.5rem 0;
+			justify-content: space-between;
+			flex-direction: row;
+		}
+		@media (min-width: $md0) {
+			margin-top: 4.19rem;
+		}
 	}
 	// .scheme__item
 	&__item {
+		display: flex;
+		align-items: center;
+		gap: 1.13rem;
 		position: relative;
-
 		counter-increment: num;
-		font-size: 1.125rem;
 		line-height: 133.333%;
+		font-size: 1.125rem;
 		&::before {
 			content: "0" counter(num);
 			color: #7db2ff;
@@ -659,79 +894,102 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 			line-height: 1;
 			text-transform: uppercase;
 		}
-		&:not(:last-child) {
-			display: flex;
-			align-items: center;
-			flex: 1 1 auto;
-			gap: 1.13rem;
-			&::after {
-				content: "";
-				width: 100%;
-				height: rem(1);
-				border-bottom: rem(1) dashed #7db2ff;
-				mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
-				mask-mode: alpha;
-				flex: 1 1 auto;
-			}
-		}
-		&:nth-child(odd) {
-			.scheme__item-text {
-				bottom: 6rem;
-			}
-		}
-		&:nth-child(even) {
-			.scheme__item-text {
-				top: 5rem;
-				&::before {
-					top: auto;
-					bottom: calc(100% + 0.25rem);
+		@media (max-width: $md3) {
+			&:not(:last-child) {
+				margin-bottom: 2rem;
+				&::after {
+					content: "";
+					position: absolute;
+					top: 100%;
+					left: rem(20);
+					width: rem(1);
+					height: 2rem;
+					border-left: rem(1) dashed #7db2ff;
 					mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+					mask-mode: alpha;
 				}
 			}
 		}
-		&:first-child {
-			.scheme__item-text {
-				left: 0;
-				text-align: left;
-				transform: none;
-				&::before {
-					left: rem(17);
+		@media (min-width: $md3) {
+			&:not(:last-child) {
+				flex: 1 1 auto;
+
+				&::after {
+					content: "";
+					width: 100%;
+					height: rem(1);
+					border-bottom: rem(1) dashed #7db2ff;
+					mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+					mask-mode: alpha;
+					flex: 1 1 auto;
+				}
+			}
+			&:nth-child(odd) {
+				.scheme__item-text {
+					bottom: 6rem;
+				}
+			}
+			&:nth-child(even) {
+				.scheme__item-text {
+					top: 5rem;
+					&::before {
+						top: auto;
+						bottom: calc(100% + 0.25rem);
+						mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+					}
+				}
+			}
+			&:first-child {
+				.scheme__item-text {
+					left: 0;
+					text-align: left;
 					transform: none;
+					&::before {
+						left: rem(17);
+						transform: none;
+					}
 				}
 			}
-		}
-		&:last-child {
-			.scheme__item-text {
-				right: 0;
-				left: auto;
-				text-align: right;
-				transform: none;
-				&::before {
+			&:last-child {
+				.scheme__item-text {
+					right: 0;
 					left: auto;
-					right: rem(17);
+					text-align: right;
 					transform: none;
+					&::before {
+						left: auto;
+						right: rem(17);
+						transform: none;
+					}
 				}
 			}
 		}
 	}
 	// .scheme__item-text
 	&__item-text {
-		position: absolute;
-		width: 17.75rem;
-		left: 10%;
-		text-align: center;
-		transform: translateX(-50%);
-		&::before {
-			content: "";
+		@media (max-width: $md3) {
+			br {
+				display: none;
+			}
+		}
+		@media (min-width: $md3) {
 			position: absolute;
-			top: calc(100% + 0.5rem);
-			left: 50%;
+			width: 17.75rem;
+			left: 10%;
+			text-align: center;
 			transform: translateX(-50%);
-			width: rem(1);
-			height: 100%;
-			border-left: rem(1) dashed #7db2ff;
-			mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
-			mask-mode: alpha;
+			&::before {
+				content: "";
+				width: rem(1);
+				height: 100%;
+				border-left: rem(1) dashed #7db2ff;
+				mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+				mask-mode: alpha;
+				position: absolute;
+				top: calc(100% + 0.5rem);
+				left: 50%;
+				transform: translateX(-50%);
+			}
 		}
 	}
 }

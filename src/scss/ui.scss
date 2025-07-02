@@ -1,7 +1,17 @@
 .title {
-	font-size: 2.75rem;
-	line-height: 113.636%;
 	text-transform: uppercase;
+	line-height: 129.412%;
+	font-size: 1.65rem;
+	@media (min-width: $md5) {
+		font-size: 1.875rem;
+	}
+	@media (min-width: $md4) {
+		font-size: 2.125rem;
+	}
+	@media (min-width: $md0) {
+		line-height: 113.636%;
+		font-size: 2.75rem;
+	}
 }
 
 //============ МОДУЛИ ====================
