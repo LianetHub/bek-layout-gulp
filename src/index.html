@@ -5,6 +5,198 @@
         <div class="wrapper">
             @@include('html/_header.html', {})
             <main class="page">
+                <section class="promo">
+                    <div class="promo__container">
+                        <div class="row">
+                            <div class="col-7">
+                                <div class="promo__slider swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="promo__slide swiper-slide">
+                                            <h1 class="promo__slide-title title">
+                                                <span>скидка 20%</span>
+                                                на обучение по охране труда
+                                            </h1>
+                                            <a href="#" class="promo__slide-btn btn btn-white icon-arrows">подробнее</a>
+                                        </div>
+                                        <div class="promo__slide swiper-slide">
+                                            <div class="promo__slide-title title">
+                                                <span>Аутсорсинг</span>
+                                                охраны труда и экологии
+                                            </div>
+                                            <a href="#" class="promo__slide-btn btn btn-white icon-arrows">узнать больше</a>
+                                        </div>
+                                        <div class="promo__slide swiper-slide">
+                                            <div class="promo__slide-title title">
+                                                <span>Обучение</span>
+                                                по пожарной безопасности
+                                            </div>
+                                            <a href="#" class="promo__slide-btn btn btn-white icon-arrows">записаться</a>
+                                        </div>
+                                        <div class="promo__slide swiper-slide">
+                                            <div class="promo__slide-title title">
+                                                <span>Документация</span>
+                                                по охране труда под ключ
+                                            </div>
+                                            <a href="#" class="promo__slide-btn btn btn-white icon-arrows">подробнее</a>
+                                        </div>
+                                        <div class="promo__slide swiper-slide">
+                                            <div class="promo__slide-title title">
+                                                <span>Аудит</span>
+                                                и оценка профрисков на предприятии
+                                            </div>
+                                            <a href="#" class="promo__slide-btn btn btn-white icon-arrows">заказать</a>
+                                        </div>
+                                    </div>
+                                    <div class="promo__slider-footer">
+                                        <div class="promo__slider-controls">
+                                            <button type="button" class="promo__slider-prev swiper-button-prev"></button>
+                                            <button type="button" class="promo__slider-prev swiper-button-next"></button>
+                                        </div>
+                                        <div class="promo__tagline">балтийская экспертная компания</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div class="promo__news">
+                                    <h2 class="promo__news-title title icon-news">новости</h2>
+                                    <ul class="promo__news-list">
+                                        <li class="promo__news-item">
+                                            <time datetime="2025-05-27" class="promo__news-time">27 мая 2025</time>
+                                            <a href="" class="promo__news-link">ООО «БЭК» успешно подтвердило аккредитацию по новым правилам</a>
+                                        </li>
+                                        <li class="promo__news-item">
+                                            <time datetime="2025-05-15" class="promo__news-time">15 мая 2025</time>
+                                            <a href="" class="promo__news-link">Минтруд открыл доступ к новым реестрам</a>
+                                        </li>
+                                        <li class="promo__news-item">
+                                            <time datetime="2025-05-05" class="promo__news-time">5 мая 2025</time>
+                                            <a href="" class="promo__news-link">Напоминаем, приказ 772н обязателен к исполнению, он устанавливает обязательные правила к содержанию и структуре разделов ИОТ.</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="services">
+                    <div class="services__container">
+                        <h2 class="services__title title">Кадры, охрана труда и окружающей среды</h2>
+                        <p class="services__subtitle">Экспертное сопровождение вашего бизнеса</p>
+                        <ul class="services__list row">
+                            @@loop('./html/templates/service.html', './html/json/services.json')
+                        </ul>
+                        <a href="" class="services__loadmore btn btn-primary icon-arrows">все услуги</a>
+                    </div>
+                </section>
+                <div class="info">
+                    <div class="info__container">
+                        <div class="info__block">
+                            <div class="info__block-text icon-info">ООО «БЭК» выполняет весь комплекс работ в указанных сферах, начиная с документарного аудита (работа с документами, предоставленными заказчиками) и присутственного (нахождение на рабочих местах заказчика). По результатам аудита подготавливается экспертное заключение, характеризующее пробелы в ведении деятельности и основные направления улучшения ситуации. При желании заказчика, по результатам аудита могут быть разработаны единичные документы, устраняющие нарушения, так и разработан полный комплект документации (охрана труда, кадровое делопроизводство, экология, пожарная безопасность, ГО и ЧС и т.д.), соответствующий последним законодательным актам в указанных сферах.</div>
+                        </div>
+                    </div>
+                </div>
+                <section class="team">
+                    <div class="team__container">
+                        <h2 class="team__title title">Балтийская экспертная компания</h2>
+                        <div class="team__image">
+                            <img src="@img/team.jpg" alt="Фото команды">
+                        </div>
+                        <div class="team__body">
+                            <div class="row">
+                                <div class="col-7">
+                                    <div class="team__desc">
+                                        <div class="team__desc-body">
+                                            <p>ООО «БЭК» выполняет весь комплекс работ в указанных сферах, начиная с документарного аудита (работа с документами, предоставленными заказчиками) и присутственного (нахождение на рабочих местах заказчика). По результатам аудита подготавливается экспертное заключение, характеризующее пробелы в ведении деятельности и основные направления улучшения ситуации. При желании заказчика, по результатам аудита могут быть разработаны единичные документы, устраняющие нарушения, так и разработан полный комплект документации (охрана труда, кадровое делопроизводство, экология, пожарная безопасность, ГО и ЧС и т.д.), соответствующий последним законодательным актам в указанных сферах.</p>
+                                            <p>Учитывая профессионализм работающих у нас специалистов, множество компаний доверяют ООО «БЭК» сопровождение их деятельности (аутсорсинг) кадрового делопроизводства, охраны труда, экологической и пожарной безопасности.</p>
+                                        </div>
+                                        <div class="team__desc-logo">
+                                            <img src="@img/logo-vertical.png" alt="Логотип">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-5">
+                                    <ul class="team__list">
+                                        <li class="team__list-item">Опыт работы в отрасли с 2015 года</li>
+                                        <li class="team__list-item">Высокая гибкость: можем работать комплексно, оказывая услуги «под ключ», или выполнять для вас отдельные задачи</li>
+                                        <li class="team__list-item">Открытая ценовая политика, которая позволяет формировать комфотные условия сотрудничества для каждого клиента</li>
+                                        <li class="team__list-item">Надежность: незамедлительная реакция наших специалистов на запросы руководителей и сотрудников неоднократно выручала организации</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="partners">
+                    <div class="partners__container">
+                        <div class="partners__header">
+                            <h2 class="partners__title title">
+                                наши <br> партнеры
+                            </h2>
+                            <div class="partners__controls">
+                                <button type="button" class="partners__prev swiper-button-prev"></button>
+                                <button type="button" class="partners__next swiper-button-next"></button>
+                            </div>
+                        </div>
+                        <div class="partners__slider swiper">
+                            <div class="swiper-wrapper">
+                                <div class="partners__slide swiper-slide">
+                                    <img src="@img/partners/Federation_of_Small_Businesses.svg" alt="Логотип партнера">
+                                </div>
+                                <div class="partners__slide swiper-slide">
+                                    <img src="@img/partners/Bloomberg_Businessweek.svg" alt="Логотип партнера">
+                                </div>
+                                <div class="partners__slide swiper-slide">
+                                    <img src="@img/partners/BusinessWire.svg" alt="Логотип партнера">
+                                </div>
+                                <div class="partners__slide swiper-slide">
+                                    <img src="@img/partners/BusinessWorld.svg" alt="Логотип партнера">
+                                </div>
+                                <div class="partners__slide swiper-slide">
+                                    <img src="@img/partners/businessoptix.com.svg" alt="Логотип партнера">
+                                </div>
+                                <div class="partners__slide swiper-slide">
+                                    <img src="@img/partners/continental.svg" alt="Логотип партнера">
+                                </div>
+                                <div class="partners__slide swiper-slide">
+                                    <img src="@img/partners/e-businesssuite.svg" alt="Логотип партнера">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="why">
+                    <div class="why__container">
+                        <h2 class="why__title title">Почему нам доверяют</h2>
+                        <ul class="why__list row">
+                            @@loop('./html/templates/why-item.html', './html/json/why.json')
+                        </ul>
+                    </div>
+                </section>
+                <section class="scheme">
+                    <div class="scheme__container">
+                        <h2 class="scheme__title title">прозрачная схема работы</h2>
+                        <ol class="scheme__list">
+                            <li class="scheme__item">
+                                Оставьте заявку на сайте или позвоните нам
+                            </li>
+                            <li class="scheme__item">
+                                Обсуждение вопросов и уточнение деталей
+                            </li>
+                            <li class="scheme__item">
+                                Подписание <br> договора
+                            </li>
+                            <li class="scheme__item">
+                                Оплата в согласованном объеме
+                            </li>
+                            <li class="scheme__item">
+                                Оказание услуги со строгим соблюдением сроков и условий
+                            </li>
+                            <li class="scheme__item">
+                                Подписание закрывающих документов
+                            </li>
+                        </ol>
+                    </div>
+                </section>
             </main>
             @@include('html/_footer.html', {})
             @@include('html/_modal.html', {})

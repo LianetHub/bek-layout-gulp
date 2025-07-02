@@ -1,11 +1,110 @@
 <header class="header">
     <div class="header__container">
-        <a href="/" class="header__logo">
-            <img src="@img/logo.svg" alt="Логотип">
-        </a>
-        <div class="header__btns">
-            <a href="" class="header__btn btn btn-white icon-input">Войти</a>
-            <a href="" class="header__btn btn btn-primary icon-user">Зарегистрироваться</a>
+        <div class="header__top">
+            <a href="/" class="header__logo">
+                <img src="@img/logo.png" alt="Логотип сайта 'Балтийская экспертная компания'">
+            </a>
+            <div class="header__main">
+                <div class="header__main-heading">
+                    <div class="header__tagline">ВАШ БЕЗОПАСНЫЙ ТРУД - НАША РАБОТА!</div>
+                    <a href="mailto:info@bek-spb.ru" class="header__mail icon-envelope">info@bek-spb.ru</a>
+                </div>
+                <nav aria-label="Основное меню" class="header__menu menu">
+                    <ul class="menu__list">
+                        <li class="menu__item menu__item--parent">
+                            <a href="" class="menu__link">Компания</a>
+                            <button type="button" class="menu__arrow icon-chevron-down"></button>
+                            <ul class="submenu">
+                                <li class="submenu__item"><a href="" class="submenu__link">О компании</a></li>
+                                <li class="submenu__item"><a href="" class="submenu__link">Реквизиты ООО</a></li>
+                                <li class="submenu__item"><a href="" class="submenu__link">Аккредитации и лицензии</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu__item"><a href="" class="menu__link">Отзывы</a></li>
+                        <li class="menu__item"><a href="" class="menu__link">Новости</a></li>
+                        <li class="menu__item"><a href="" class="menu__link">Блог</a></li>
+                        <li class="menu__item"><a href="" class="menu__link">Контакты</a></li>
+                        <li class="menu__item"><a href="" class="menu__link">Сведения об образовательной организации</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <a href="" class="header__low-eye icon-eye">Версия для слабовидящих</a>
+        </div>
+        <div class="header__bottom">
+            <div class="header__services">
+                <div class="header__services-block">
+                    <button type="button" class="header__services-btn btn btn-primary icon-chevron-down">услуги</button>
+                    <nav aria-label="Меню услуг" class="header__services-menu">
+                        <div class="header__service">
+                            <div class="header__service-caption">Охрана труда:</div>
+                            <ul class="header__service-list">
+                                <li class="header__service-item"><a href="" class="header__service-link">Аутсорсинг охраны труда</a></li>
+                                <li class="header__service-item"><a href="" class="header__service-link">Разработка документации по охране труда</a></li>
+                                <li class="header__service-item"><a href="" class="header__service-link">Разработка документации по промышленной безопасности</a></li>
+                                <li class="header__service-item"><a href="" class="header__service-link">Разработка документации по пожарной безопасности</a></li>
+                                <li class="header__service-item"><a href="" class="header__service-link">Аудит по охране труда</a></li>
+                                <li class="header__service-item"><a href="" class="header__service-link">Идентификация и оценка профессиональных рисков</a></li>
+                            </ul>
+                        </div>
+                        <div class="header__service">
+                            <div class="header__service-caption">Кадровое делопроизводство:</div>
+                            <ul class="header__service-list">
+                                <li class="header__service-item"><a href="" class="header__service-link">Аутсорсинг кадрового делопроизводства</a></li>
+                                <li class="header__service-item"><a href="" class="header__service-link">Разработка документации по кадровому делопроизводству</a></li>
+                                <li class="header__service-item"><a href="" class="header__service-link">Аудит кадровому делопроизводству</a></li>
+                            </ul>
+                        </div>
+                        <div class="header__service">
+                            <div class="header__service-caption">Охрана окружающей среды:</div>
+                            <ul class="header__service-list">
+                                <li class="header__service-item"><a href="" class="header__service-link">Аутсорсинг экологии (охране окружающей среды)</a></li>
+                                <li class="header__service-item"><a href="" class="header__service-link">Разработка документации по экологии (охране окружающей среды)</a></li>
+                                <li class="header__service-item"><a href="" class="header__service-link">Аудит по экологии (охране окружающей среды)</a></li>
+                            </ul>
+                        </div>
+                        <div class="header__service">
+                            <div class="header__service-caption">Обучение:</div>
+                            <ul class="header__service-list">
+                                <li class="header__service-item"><a href="" class="header__service-link">Аутсорсинг охраны труда</a></li>
+                                <li class="header__service-item"><a href="" class="header__service-link">Разработка документации по охране труда</a></li>
+                                <li class="header__service-item"><a href="" class="header__service-link">Разработка документации по промышленной безопасности</a></li>
+                                <li class="header__service-item"><a href="" class="header__service-link">Разработка документации по пожарной безопасности</a></li>
+                                <li class="header__service-item"><a href="" class="header__service-link">Аудит по охране труда</a></li>
+                                <li class="header__service-item"><a href="" class="header__service-link">Идентификация и оценка профессиональных рисков</a></li>
+                            </ul>
+                        </div>
+                        <div class="header__service">
+                            <a href="" class="header__service-caption">Все услуги</a>
+                        </div>
+                    </nav>
+                </div>
+                <div class="header__services-block">
+                    <button type="button" class="header__services-btn btn btn-secondary icon-chevron-down">учебный центр</button>
+                    <nav aria-label="Меню учебного центра" class="header__services-menu">
+                        <div class="header__service">
+                            <ul class="header__service-list">
+                                <li class="header__service-item"><a href="" class="header__service-link">Направления обучения</a></li>
+                                <li class="header__service-item"><a href="" class="header__service-link">Шаблоны договоров</a></li>
+                                <li class="header__service-item"><a href="" class="header__service-link">Образцы выдаваемых документов</a></li>
+                                <li class="header__service-item"><a href="" class="header__service-link">Заказать обучение</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="header__phones icon-phone">
+                <a href="tel:+79312000600" class="header__phone">+7 (931) 2000-600</a>
+                <a href="tel:+79259874623" class="header__phone">+7 (925) 9874-623</a>
+            </div>
+            <div class="header__socials">
+                <a href="" class="header__social icon-telegram"></a>
+                <a href="" class="header__social icon-whatsapp"></a>
+                <a href="" class="header__social icon-vk"></a>
+            </div>
+            <div class="header__actions">
+                <a href="" data-fancybox class="header__btn btn btn-primary icon-arrows">заказать обучение</a>
+                <a href="" data-fancybox class="header__btn btn btn-secondary icon-arrows">заказать звонок</a>
+            </div>
         </div>
     </div>
 </header>
