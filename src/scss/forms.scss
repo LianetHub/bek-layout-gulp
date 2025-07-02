@@ -161,6 +161,14 @@
 			width: 0.875rem;
 			height: 0.875rem;
 			background: url("@img/icons/arrows.svg") center / contain no-repeat;
+			transition: transform 0.3s ease;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				&::before {
+					transform: scale(1.25);
+				}
+			}
 		}
 	}
 

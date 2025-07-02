@@ -1,4 +1,6 @@
 .header {
+	position: relative;
+	z-index: 6;
 	// .header__container
 	&__container {
 	}
@@ -109,28 +111,106 @@
 	}
 	// .header__services-block
 	&__services-block {
+		position: relative;
+		@media (any-hover: hover) {
+			&:hover {
+				.header__services-btn {
+					background: #3972c4;
+					&::before {
+						transform: rotate(180deg);
+					}
+				}
+				.header__services-menu {
+					opacity: 1;
+					visibility: visible;
+					transform: translate3d(0, 0, 0);
+				}
+			}
+		}
 	}
 	// .header__services-btn
 	&__services-btn {
+		@media (hover: none) {
+			&.active {
+				background: #3972c4;
+				&::before {
+					transform: rotate(180deg);
+				}
+			}
+		}
+		&::before {
+			transition: transform 0.3s ease;
+		}
 	}
 	// .header__services-menu
 	&__services-menu {
-		display: none;
+		position: absolute;
+		top: 100%;
+		padding-top: 0.62rem;
+		z-index: 2;
+		transform-origin: center top;
+		transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+		opacity: 0;
+		visibility: hidden;
+		will-change: transform;
+		transform: translate3d(0, rem(-7), 0);
+		@media (hover: none) {
+			&.open {
+				opacity: 1;
+				visibility: visible;
+				transform: translate3d(0, 0, 0);
+			}
+		}
+	}
+	// .header__body
+	&__services-body {
+		border-bottom: rem(1) solid #dde3ed;
+		background: #f3f7fd;
+		padding: 2.06rem 2.19rem;
+		&:has(.header__service:nth-child(2)) {
+			column-gap: 2.5rem;
+			columns: 2;
+		}
+		&:has(.header__service:nth-child(3)) {
+			column-gap: 2.5rem;
+			columns: 3;
+		}
 	}
 	// .header__service
 	&__service {
+		min-width: 19.6875rem;
+		break-inside: avoid;
+		&:not(:last-child) {
+			margin-bottom: 2.5rem;
+		}
 	}
 	// .header__service-caption
 	&__service-caption {
+		color: #3972c4;
+		font-size: 1.25rem;
+		line-height: 130%;
+		&:is(a) {
+			transition: color 0.3s ease;
+			@media (any-hover: hover) {
+				&:hover {
+					color: darken($color: #3972c4, $amount: 10);
+				}
+			}
+		}
 	}
 	// .header__service-list
 	&__service-list {
+		&:not(:first-child) {
+			margin-top: 1.25rem;
+		}
 	}
 	// .header__service-item
 	&__service-item {
+		@extend .submenu__item;
 	}
 	// .header__service-link
 	&__service-link {
+		@extend .submenu__link;
 	}
 	// .header__phones
 	&__phones {
@@ -244,13 +324,33 @@
 	// .menu__item
 	&__item {
 		&.menu__item--parent {
+			position: relative;
 			display: flex;
 			align-items: center;
 			gap: 0.75rem;
+			@media (hover: none) {
+				&:has(.menu__arrow.active) {
+					.menu__arrow,
+					.menu__link {
+						color: #3972c4;
+					}
+				}
+			}
 			@media (any-hover: hover) {
 				&:hover {
-					.menu__arrow {
+					.menu__arrow,
+					.menu__link {
 						color: #3972c4;
+					}
+					.menu__arrow {
+						transform: rotate(180deg);
+					}
+					& .submenu {
+						@media (min-width: $md3) {
+							opacity: 1;
+							visibility: visible;
+							transform: translate3d(0, 0, 0);
+						}
 					}
 				}
 			}
@@ -268,17 +368,69 @@
 	}
 	// .menu__arrow
 	&__arrow {
-		transition: color 0.3s ease;
+		transition: color 0.3s ease, transform 0.3s ease;
 		font-size: 0.75rem;
+		&.active {
+			transform: rotate(180deg);
+		}
 	}
 }
 
 .submenu {
-	display: none;
+	position: absolute;
+	top: 100%;
+	padding-top: 1.87rem;
+	z-index: 2;
+	min-width: 24.0625rem;
+	transform-origin: center top;
+	transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+	opacity: 0;
+	visibility: hidden;
+	will-change: transform;
+	transform: translate3d(0, rem(-7), 0);
+	@media (hover: none) {
+		&.open {
+			opacity: 1;
+			visibility: visible;
+			transform: translate3d(0, 0, 0);
+		}
+	}
+	&__list {
+		border-bottom: rem(1) solid #dde3ed;
+		background: #f3f7fd;
+		padding: 2.12rem 2.19rem;
+	}
 	// .submenu__item
 	&__item {
+		padding-left: 1.81rem;
+		position: relative;
+		color: #282b3c;
+		font-size: 1rem;
+		line-height: 137.5%;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 1.1875rem;
+			height: 1.1875rem;
+			background: url("@img/icons/arrows-blue.svg") center / 0.875rem no-repeat;
+		}
+		&:not(:last-child) {
+			margin-bottom: 0.63rem;
+		}
 	}
 	// .submenu__link
 	&__link {
+		transition: color 0.3s ease;
+		text-underline-position: from-font;
+		display: inline-block;
+		max-width: 17rem;
+		@media (any-hover: hover) {
+			&:hover {
+				color: #203299;
+				text-decoration-line: underline;
+			}
+		}
 	}
 }

@@ -129,10 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-
-
     // click handlers
-
     document.addEventListener('click', (e) => {
 
         const target = e.target;
@@ -142,6 +139,40 @@ document.addEventListener("DOMContentLoaded", () => {
             getMenu()
         }
 
+        if (target.classList.contains('menu__arrow')) {
+
+            let subMenu = target.nextElementSibling;
+
+            if (document.querySelector('.menu__arrow.active') !== target) {
+
+                if (document.querySelector('.submenu.open')) {
+                    document.querySelector('.submenu.open').classList.remove('open');
+                }
+                if (document.querySelector('.menu__arrow.active')) {
+                    document.querySelector('.menu__arrow.active').classList.remove('active');
+                }
+            }
+
+            subMenu.classList.toggle('open');
+            target.classList.toggle('active');
+
+        }
+
+        if (target.classList.contains('header__services-btn')) {
+            const serviceMenu = target.nextElementSibling;
+
+
+            document.querySelectorAll('.header__services-menu.open').forEach(menu => {
+                if (menu !== serviceMenu) {
+                    menu.classList.remove('open');
+                    menu.previousElementSibling.classList.remove('active');
+                }
+            });
+
+
+            serviceMenu.classList.toggle('open');
+            target.classList.toggle('active');
+        }
 
 
 

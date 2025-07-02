@@ -66,11 +66,13 @@
                         <li class="menu__item menu__item--parent">
                             <a href="" class="menu__link">Компания</a>
                             <button type="button" class="menu__arrow icon-chevron-down"></button>
-                            <ul class="submenu">
-                                <li class="submenu__item"><a href="" class="submenu__link">О компании</a></li>
-                                <li class="submenu__item"><a href="" class="submenu__link">Реквизиты ООО</a></li>
-                                <li class="submenu__item"><a href="" class="submenu__link">Аккредитации и лицензии</a></li>
-                            </ul>
+                            <div class="submenu">
+                                <ul class="submenu__list">
+                                    <li class="submenu__item"><a href="" class="submenu__link">О компании</a></li>
+                                    <li class="submenu__item"><a href="" class="submenu__link">Реквизиты ООО</a></li>
+                                    <li class="submenu__item"><a href="" class="submenu__link">Аккредитации и лицензии</a></li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="menu__item"><a href="" class="menu__link">Отзывы</a></li>
                         <li class="menu__item"><a href="" class="menu__link">Новости</a></li>
@@ -87,59 +89,63 @@
                 <div class="header__services-block">
                     <button type="button" class="header__services-btn btn btn-secondary icon-chevron-down">услуги</button>
                     <nav aria-label="Меню услуг" class="header__services-menu">
-                        <div class="header__service">
-                            <div class="header__service-caption">Охрана труда:</div>
-                            <ul class="header__service-list">
-                                <li class="header__service-item"><a href="" class="header__service-link">Аутсорсинг охраны труда</a></li>
-                                <li class="header__service-item"><a href="" class="header__service-link">Разработка документации по охране труда</a></li>
-                                <li class="header__service-item"><a href="" class="header__service-link">Разработка документации по промышленной безопасности</a></li>
-                                <li class="header__service-item"><a href="" class="header__service-link">Разработка документации по пожарной безопасности</a></li>
-                                <li class="header__service-item"><a href="" class="header__service-link">Аудит по охране труда</a></li>
-                                <li class="header__service-item"><a href="" class="header__service-link">Идентификация и оценка профессиональных рисков</a></li>
-                            </ul>
-                        </div>
-                        <div class="header__service">
-                            <div class="header__service-caption">Кадровое делопроизводство:</div>
-                            <ul class="header__service-list">
-                                <li class="header__service-item"><a href="" class="header__service-link">Аутсорсинг кадрового делопроизводства</a></li>
-                                <li class="header__service-item"><a href="" class="header__service-link">Разработка документации по кадровому делопроизводству</a></li>
-                                <li class="header__service-item"><a href="" class="header__service-link">Аудит кадровому делопроизводству</a></li>
-                            </ul>
-                        </div>
-                        <div class="header__service">
-                            <div class="header__service-caption">Охрана окружающей среды:</div>
-                            <ul class="header__service-list">
-                                <li class="header__service-item"><a href="" class="header__service-link">Аутсорсинг экологии (охране окружающей среды)</a></li>
-                                <li class="header__service-item"><a href="" class="header__service-link">Разработка документации по экологии (охране окружающей среды)</a></li>
-                                <li class="header__service-item"><a href="" class="header__service-link">Аудит по экологии (охране окружающей среды)</a></li>
-                            </ul>
-                        </div>
-                        <div class="header__service">
-                            <div class="header__service-caption">Обучение:</div>
-                            <ul class="header__service-list">
-                                <li class="header__service-item"><a href="" class="header__service-link">Аутсорсинг охраны труда</a></li>
-                                <li class="header__service-item"><a href="" class="header__service-link">Разработка документации по охране труда</a></li>
-                                <li class="header__service-item"><a href="" class="header__service-link">Разработка документации по промышленной безопасности</a></li>
-                                <li class="header__service-item"><a href="" class="header__service-link">Разработка документации по пожарной безопасности</a></li>
-                                <li class="header__service-item"><a href="" class="header__service-link">Аудит по охране труда</a></li>
-                                <li class="header__service-item"><a href="" class="header__service-link">Идентификация и оценка профессиональных рисков</a></li>
-                            </ul>
-                        </div>
-                        <div class="header__service">
-                            <a href="" class="header__service-caption">Все услуги</a>
+                        <div class="header__services-body">
+                            <div class="header__service">
+                                <div class="header__service-caption">Охрана труда:</div>
+                                <ul class="header__service-list">
+                                    <li class="header__service-item"><a href="" class="header__service-link">Аутсорсинг охраны труда</a></li>
+                                    <li class="header__service-item"><a href="" class="header__service-link">Разработка документации по&nbsp;охране труда</a></li>
+                                    <li class="header__service-item"><a href="" class="header__service-link">Разработка документации по&nbsp;промышленной безопасности</a></li>
+                                    <li class="header__service-item"><a href="" class="header__service-link">Разработка документации по&nbsp;пожарной безопасности</a></li>
+                                    <li class="header__service-item"><a href="" class="header__service-link">Аудит по&nbsp;охране труда</a></li>
+                                    <li class="header__service-item"><a href="" class="header__service-link">Идентификация и оценка профессиональных рисков</a></li>
+                                </ul>
+                            </div>
+                            <div class="header__service">
+                                <div class="header__service-caption">Кадровое делопроизводство:</div>
+                                <ul class="header__service-list">
+                                    <li class="header__service-item"><a href="" class="header__service-link">Аутсорсинг кадрового делопроизводства</a></li>
+                                    <li class="header__service-item"><a href="" class="header__service-link">Разработка документации по&nbsp;кадровому делопроизводству</a></li>
+                                    <li class="header__service-item"><a href="" class="header__service-link">Аудит кадровому делопроизводству</a></li>
+                                </ul>
+                            </div>
+                            <div class="header__service">
+                                <div class="header__service-caption">Охрана окружающей среды:</div>
+                                <ul class="header__service-list">
+                                    <li class="header__service-item"><a href="" class="header__service-link">Аутсорсинг экологии (охране окружающей среды)</a></li>
+                                    <li class="header__service-item"><a href="" class="header__service-link">Разработка документации по&nbsp;экологии (охране окружающей среды)</a></li>
+                                    <li class="header__service-item"><a href="" class="header__service-link">Аудит по&nbsp;экологии (охране окружающей среды)</a></li>
+                                </ul>
+                            </div>
+                            <div class="header__service">
+                                <div class="header__service-caption">Обучение:</div>
+                                <ul class="header__service-list">
+                                    <li class="header__service-item"><a href="" class="header__service-link">Аутсорсинг охраны труда</a></li>
+                                    <li class="header__service-item"><a href="" class="header__service-link">Разработка документации по&nbsp;охране труда</a></li>
+                                    <li class="header__service-item"><a href="" class="header__service-link">Разработка документации по&nbsp;промышленной безопасности</a></li>
+                                    <li class="header__service-item"><a href="" class="header__service-link">Разработка документации по&nbsp;пожарной безопасности</a></li>
+                                    <li class="header__service-item"><a href="" class="header__service-link">Аудит по&nbsp;охране труда</a></li>
+                                    <li class="header__service-item"><a href="" class="header__service-link">Идентификация и оценка профессиональных рисков</a></li>
+                                </ul>
+                            </div>
+                            <div class="header__service">
+                                <a href="" class="header__service-caption">Все услуги</a>
+                            </div>
                         </div>
                     </nav>
                 </div>
                 <div class="header__services-block">
                     <button type="button" class="header__services-btn btn btn-secondary icon-chevron-down">учебный центр</button>
                     <nav aria-label="Меню учебного центра" class="header__services-menu">
-                        <div class="header__service">
-                            <ul class="header__service-list">
-                                <li class="header__service-item"><a href="" class="header__service-link">Направления обучения</a></li>
-                                <li class="header__service-item"><a href="" class="header__service-link">Шаблоны договоров</a></li>
-                                <li class="header__service-item"><a href="" class="header__service-link">Образцы выдаваемых документов</a></li>
-                                <li class="header__service-item"><a href="" class="header__service-link">Заказать обучение</a></li>
-                            </ul>
+                        <div class="header__services-body">
+                            <div class="header__service">
+                                <ul class="header__service-list">
+                                    <li class="header__service-item"><a href="" class="header__service-link">Направления обучения</a></li>
+                                    <li class="header__service-item"><a href="" class="header__service-link">Шаблоны договоров</a></li>
+                                    <li class="header__service-item"><a href="" class="header__service-link">Образцы выдаваемых документов</a></li>
+                                    <li class="header__service-item"><a href="" class="header__service-link">Заказать обучение</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </nav>
                 </div>
