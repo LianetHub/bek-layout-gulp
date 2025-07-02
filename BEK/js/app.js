@@ -1,5 +1,6 @@
 "use strict";
 
+// Инициализация Fancybox
 if (typeof Fancybox !== "undefined" && Fancybox !== null) {
     Fancybox.bind("[data-fancybox]", {
         dragToClose: false,
@@ -7,9 +8,10 @@ if (typeof Fancybox !== "undefined" && Fancybox !== null) {
     });
 }
 
+// Дожидаемся полной загрузки DOM перед выполнением скриптов
 document.addEventListener("DOMContentLoaded", () => {
 
-
+    // Объект для определения типа мобильного устройства на основе userAgent
     const isMobile = {
         Android: function () {
             return navigator.userAgent.match(/Android/i);
@@ -36,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
     };
 
+    // Функция для определения типа устройства (мобильное/ПК) и добавления соответствующего класса к body
     function getNavigator() {
         if (isMobile.any() || window.innerWidth < 992) {
             document.body.classList.remove("_pc");
@@ -48,18 +51,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     getNavigator();
 
+
     window.addEventListener('resize', () => {
         getNavigator()
     });
 
-
+    // Обработка полей ввода телефона
     var phoneInputs = document.querySelectorAll('input[type="tel"]');
 
+
     var getInputNumbersValue = function (input) {
-        // Return stripped input value — just numbers
         return input.value.replace(/\D/g, '');
     }
-
     var onPhonePaste = function (e) {
         var input = e.target,
             inputNumbersValue = getInputNumbersValue(input);
@@ -67,8 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (pasted) {
             var pastedText = pasted.getData('Text');
             if (/\D/g.test(pastedText)) {
-                // Attempt to paste non-numeric symbol — remove all non-numeric symbols,
-                // formatting will be in onPhoneInput handler
+
                 input.value = inputNumbersValue;
                 return;
             }
@@ -86,14 +88,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if (input.value.length != selectionStart) {
-            // Editing in the middle of input, not last symbol
+
             if (e.data && /\D/g.test(e.data)) {
-                // Attempt to input non-numeric symbol
                 input.value = inputNumbersValue;
             }
             return;
         }
 
+        // Форматирование номера телефона для российских номеров (+7 (XXX) XXX-XX-XX)
         if (["7", "8", "9"].indexOf(inputNumbersValue[0]) > -1) {
             if (inputNumbersValue[0] == "9") inputNumbersValue = "7" + inputNumbersValue;
             var firstSymbols = (inputNumbersValue[0] == "8") ? "8" : "+7";
@@ -111,13 +113,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 formattedInputValue += '-' + inputNumbersValue.substring(9, 11);
             }
         } else {
+            // Для других номеров просто добавляем '+'
             formattedInputValue = '+' + inputNumbersValue.substring(0, 16);
         }
         input.value = formattedInputValue;
     }
 
+
     var onPhoneKeyDown = function (e) {
-        // Clear input after remove last symbol
+
         var inputValue = e.target.value.replace(/\D/g, '');
         if (e.keyCode == 8 && inputValue.length == 1) {
             e.target.value = "";
@@ -131,10 +135,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // click handlers
+    // Основной обработчик кликов для всей страницы
     document.addEventListener('click', (e) => {
         const target = e.target;
 
+        // Функция для закрытия всех открытых подменю и меню услуг
         function closeAllMenus() {
             document.querySelectorAll('.submenu.open').forEach(menu => {
                 menu.classList.remove('open');
@@ -153,12 +158,12 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
+        // Открытие/закрытие основного меню ("бургер")
         if (target.closest('.icon-menu') || target.classList.contains('menu__close')) {
             getMenu();
-            // Если открывается основное меню, возможно, стоит закрыть все подменю
-            // closeAllMenus(); 
         }
 
+        // Открытие/закрытие подменю по стрелке
         if (target.classList.contains('menu__arrow')) {
             const subMenu = target.nextElementSibling;
 
@@ -166,28 +171,27 @@ document.addEventListener("DOMContentLoaded", () => {
                 subMenu.classList.remove('open');
                 target.classList.remove('active');
             } else {
-
                 closeAllMenus();
                 subMenu.classList.add('open');
                 target.classList.add('active');
             }
         }
 
+        // Открытие/закрытие меню услуг в шапке
         if (target.classList.contains('header__services-btn')) {
             const serviceMenu = target.nextElementSibling;
-
 
             if (serviceMenu.classList.contains('open')) {
                 serviceMenu.classList.remove('open');
                 target.classList.remove('active');
             } else {
-
                 closeAllMenus();
                 serviceMenu.classList.add('open');
                 target.classList.add('active');
             }
         }
 
+        // Закрытие всех меню при клике вне области меню услуг или подменю
         if (!target.closest('.header__services-block') && !target.closest('.menu__arrow') && !target.classList.contains('menu__arrow')) {
             closeAllMenus();
         }
@@ -199,22 +203,25 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleLocking();
     }
 
+    // Функция для блокировки/разблокировки прокрутки страницы
     function toggleLocking(lockClass) {
-
         const body = document.body;
         let className = lockClass ? lockClass : "lock";
         let pagePosition;
 
         if (body.classList.contains(className)) {
+
             pagePosition = parseInt(document.body.dataset.position, 10);
             body.dataset.position = pagePosition;
             body.style.top = -pagePosition + 'px';
         } else {
+
             pagePosition = window.scrollY;
             body.style.top = 'auto';
             window.scroll({ top: pagePosition, left: 0 });
             document.body.removeAttribute('data-position');
         }
+
 
         let lockPaddingValue = body.classList.contains(className)
             ? "0px"
@@ -224,18 +231,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
         body.style.paddingRight = lockPaddingValue;
         body.classList.toggle(className);
-
     }
 
-    // sliders
 
+    //  Слайдеры(Swiper.js)
+
+    // Инициализация слайдера для секции "Промо"
     if (document.querySelector('.promo__slider')) {
         new Swiper('.promo__slider', {
             effect: "fade",
             fadeEffect: {
                 crossFade: true
             },
-
             navigation: {
                 nextEl: '.promo__slider-next',
                 prevEl: '.promo__slider-prev',
@@ -243,11 +250,11 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    // Инициализация слайдера для секции "Партнеры"
     if (document.querySelector('.partners__slider')) {
         new Swiper('.partners__slider', {
             slidesPerView: 'auto',
             spaceBetween: 8,
-
             speed: 500,
             loop: true,
             navigation: {
@@ -261,10 +268,4 @@ document.addEventListener("DOMContentLoaded", () => {
             },
         })
     }
-
-
-
-
 });
-
-
