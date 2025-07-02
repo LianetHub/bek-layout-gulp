@@ -1,16 +1,16 @@
 @font-face {
-  font-family: "icons";
-  font-display: swap;
-  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "Stem";
   font-display: swap;
   src: url("../fonts/Stem-Medium.woff2") format("woff2"), url("../fonts/Stem-Medium.woff") format("woff");
   font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "icons";
+  font-display: swap;
+  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -470,35 +470,18 @@ body {
   border-radius: 0.25rem;
   max-width: 47.1875rem;
   width: 100%;
-  padding: 5.63rem 7.88rem;
-}
-
-.popup__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 1rem;
-  padding: 2.25rem 1rem 1rem;
+  padding: 2rem 1.5rem;
 }
 
 .popup__close {
   font-size: 1.5rem;
   position: absolute;
-  top: 2.12rem;
-  right: 2.12rem;
   width: 1.5rem;
   height: 1.5rem;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
+  top: 0.5rem;
+  right: 0.5rem;
 }
 
 .popup__title {
@@ -2630,8 +2613,13 @@ body {
     font-size: 2.125rem;
   }
 
-  .popup__body {
-    padding: 3rem 2.25rem 2.25rem 2.25rem;
+  .popup {
+    padding: 5.63rem 7.88rem;
+  }
+
+  .popup__close {
+    top: 2.12rem;
+    right: 2.12rem;
   }
 
   .btn.btn-lg {
