@@ -85,7 +85,7 @@
         <div class="header__bottom">
             <div class="header__services">
                 <div class="header__services-block">
-                    <button type="button" class="header__services-btn btn btn-primary icon-chevron-down">услуги</button>
+                    <button type="button" class="header__services-btn btn btn-secondary icon-chevron-down">услуги</button>
                     <nav aria-label="Меню услуг" class="header__services-menu">
                         <div class="header__service">
                             <div class="header__service-caption">Охрана труда:</div>
@@ -154,8 +154,8 @@
                 <a href="" class="header__social icon-vk"></a>
             </div>
             <div class="header__actions">
-                <a href="" data-fancybox class="header__btn btn btn-primary icon-arrows">заказать обучение</a>
-                <a href="" data-fancybox class="header__btn btn btn-secondary icon-arrows">заказать звонок</a>
+                <a href="" class="header__btn btn btn-primary icon-arrows">заказать обучение</a>
+                <a href="#callback" data-fancybox class="header__btn btn btn-secondary icon-arrows">заказать звонок</a>
             </div>
         </div>
     </div>
@@ -165,50 +165,55 @@
                     <div class="promo__container">
                         <div class="row">
                             <div class="col-7">
-                                <div class="promo__slider swiper">
-                                    <div class="swiper-wrapper">
-                                        <div class="promo__slide swiper-slide">
-                                            <h1 class="promo__slide-title title">
-                                                <span>скидка 20%</span>
-                                                на обучение по охране труда
-                                            </h1>
-                                            <a href="#" class="promo__slide-btn btn btn-white icon-arrows">подробнее</a>
-                                        </div>
-                                        <div class="promo__slide swiper-slide">
-                                            <div class="promo__slide-title title">
-                                                <span>Аутсорсинг</span>
-                                                охраны труда и экологии
+                                <div class="promo__main">
+                                    <div class="promo__slider swiper">
+                                        <div class="swiper-wrapper">
+                                            <div class="promo__slide swiper-slide">
+                                                <h1 class="promo__slide-title title">
+                                                    <span>скидка 20%</span>
+                                                    на обучение по&nbsp;охране труда
+                                                </h1>
+                                                <a href="#" class="promo__slide-btn btn btn-white btn-lg icon-arrows">подробнее</a>
                                             </div>
-                                            <a href="#" class="promo__slide-btn btn btn-white icon-arrows">узнать больше</a>
-                                        </div>
-                                        <div class="promo__slide swiper-slide">
-                                            <div class="promo__slide-title title">
-                                                <span>Обучение</span>
-                                                по пожарной безопасности
+                                            <div class="promo__slide swiper-slide">
+                                                <div class="promo__slide-title title">
+                                                    <span>Аутсорсинг</span>
+                                                    охраны труда и экологии
+                                                </div>
+                                                <a href="#" class="promo__slide-btn btn btn-white btn-lg icon-arrows">узнать больше</a>
                                             </div>
-                                            <a href="#" class="promo__slide-btn btn btn-white icon-arrows">записаться</a>
-                                        </div>
-                                        <div class="promo__slide swiper-slide">
-                                            <div class="promo__slide-title title">
-                                                <span>Документация</span>
-                                                по охране труда под ключ
+                                            <div class="promo__slide swiper-slide">
+                                                <div class="promo__slide-title title">
+                                                    <span>Обучение</span>
+                                                    по&nbsp;пожарной безопасности
+                                                </div>
+                                                <a href="#" class="promo__slide-btn btn btn-white btn-lg icon-arrows">записаться</a>
                                             </div>
-                                            <a href="#" class="promo__slide-btn btn btn-white icon-arrows">подробнее</a>
-                                        </div>
-                                        <div class="promo__slide swiper-slide">
-                                            <div class="promo__slide-title title">
-                                                <span>Аудит</span>
-                                                и оценка профрисков на предприятии
+                                            <div class="promo__slide swiper-slide">
+                                                <div class="promo__slide-title title">
+                                                    <span>Документация</span>
+                                                    по&nbsp;охране труда под ключ
+                                                </div>
+                                                <a href="#" class="promo__slide-btn btn btn-white btn-lg icon-arrows">подробнее</a>
                                             </div>
-                                            <a href="#" class="promo__slide-btn btn btn-white icon-arrows">заказать</a>
+                                            <div class="promo__slide swiper-slide">
+                                                <div class="promo__slide-title title">
+                                                    <span>Аудит</span>
+                                                    и&nbsp;оценка профрисков на предприятии
+                                                </div>
+                                                <a href="#" class="promo__slide-btn btn btn-white btn-lg icon-arrows">заказать</a>
+                                            </div>
+                                        </div>
+                                        <div class="promo__slider-footer">
+                                            <div class="promo__slider-controls">
+                                                <button type="button" class="promo__slider-prev swiper-button-prev"></button>
+                                                <button type="button" class="promo__slider-next swiper-button-next"></button>
+                                            </div>
+                                            <div class="promo__tagline">балтийская экспертная компания</div>
                                         </div>
                                     </div>
-                                    <div class="promo__slider-footer">
-                                        <div class="promo__slider-controls">
-                                            <button type="button" class="promo__slider-prev swiper-button-prev"></button>
-                                            <button type="button" class="promo__slider-prev swiper-button-next"></button>
-                                        </div>
-                                        <div class="promo__tagline">балтийская экспертная компания</div>
+                                    <div class="promo__image">
+                                        <img src="img/woman.png" alt="Фото девушки в каске">
                                     </div>
                                 </div>
                             </div>
@@ -218,7 +223,7 @@
                                     <ul class="promo__news-list">
                                         <li class="promo__news-item">
                                             <time datetime="2025-05-27" class="promo__news-time">27 мая 2025</time>
-                                            <a href="" class="promo__news-link">ООО «БЭК» успешно подтвердило аккредитацию по новым правилам</a>
+                                            <a href="" class="promo__news-link">ООО «БЭК» успешно подтвердило аккредитацию по&nbsp;новым правилам</a>
                                         </li>
                                         <li class="promo__news-item">
                                             <time datetime="2025-05-15" class="promo__news-time">15 мая 2025</time>
@@ -226,7 +231,7 @@
                                         </li>
                                         <li class="promo__news-item">
                                             <time datetime="2025-05-05" class="promo__news-time">5 мая 2025</time>
-                                            <a href="" class="promo__news-link">Напоминаем, приказ 772н обязателен к исполнению, он устанавливает обязательные правила к содержанию и структуре разделов ИОТ.</a>
+                                            <a href="" class="promo__news-link">Напоминаем, приказ 772н обязателен к исполнению, он&nbsp;устанавливает обязательные правила к содержанию и структуре разделов ИОТ.</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -242,7 +247,7 @@
                             <li class="col-3">
     <div class="service">
         <div class="service__image">
-            <img src="img/services/01.jpg" alt="Фото услуги">
+            <img src="img/services/01.jpg" class="cover-image" alt="Фото услуги">
         </div>
         <div class="service__name">
             Охрана труда
@@ -252,13 +257,13 @@
                 <a href="" class="service__link">Аутсорсинг охраны труда</a>
 </li>
  <li class="service__item">
-                <a href="" class="service__link">Разработка документации  по охране труда</a>
+                <a href="" class="service__link">Разработка документации <br> по охране труда</a>
 </li>
  <li class="service__item">
                 <a href="" class="service__link">Разработка документации по промышленной безопасности</a>
 </li>
  <li class="service__item">
-                <a href="" class="service__link">Разработка документации  по пожарной безопасности</a>
+                <a href="" class="service__link">Разработка документации по&nbsp;пожарной безопасности</a>
 </li>
  <li class="service__item">
                 <a href="" class="service__link">Аудит по охране труда</a>
@@ -272,7 +277,7 @@
 </li><li class="col-3">
     <div class="service">
         <div class="service__image">
-            <img src="img/services/02.jpg" alt="Фото услуги">
+            <img src="img/services/02.jpg" class="cover-image" alt="Фото услуги">
         </div>
         <div class="service__name">
             Кадровое делопроизводство
@@ -285,7 +290,7 @@
                 <a href="" class="service__link">Разработка документации по кадровому делопроизводству</a>
 </li>
  <li class="service__item">
-                <a href="" class="service__link">Аудит кадрового делопроизводства</a>
+                <a href="" class="service__link">Аудит кадрового <br> делопроизводства</a>
 </li>
 
 </ul>
@@ -293,7 +298,7 @@
 </li><li class="col-3">
     <div class="service">
         <div class="service__image">
-            <img src="img/services/03.jpg" alt="Фото услуги">
+            <img src="img/services/03.jpg" class="cover-image" alt="Фото услуги">
         </div>
         <div class="service__name">
             Охрана окружающей среды
@@ -314,7 +319,7 @@
 </li><li class="col-3">
     <div class="service">
         <div class="service__image">
-            <img src="img/services/04.jpg" alt="Фото услуги">
+            <img src="img/services/04.jpg" class="cover-image" alt="Фото услуги">
         </div>
         <div class="service__name">
             Обучение
@@ -340,7 +345,7 @@
 </div>
 </li>
                         </ul>
-                        <a href="" class="services__loadmore btn btn-primary icon-arrows">все услуги</a>
+                        <a href="" class="services__loadmore btn btn-secondary btn-lg icon-arrows">все услуги</a>
                     </div>
                 </section>
                 <div class="info">
@@ -353,12 +358,14 @@
                 <section class="team">
                     <div class="team__container">
                         <h2 class="team__title title">Балтийская экспертная компания</h2>
-                        <div class="team__image">
-                            <img src="img/team.jpg" alt="Фото команды">
-                        </div>
+                    </div>
+                    <div class="team__image">
+                        <img src="img/team.jpg" alt="Фото команды">
+                    </div>
+                    <div class="team__container">
                         <div class="team__body">
                             <div class="row">
-                                <div class="col-7">
+                                <div class="col-8">
                                     <div class="team__desc">
                                         <div class="team__desc-body">
                                             <p>ООО «БЭК» выполняет весь комплекс работ в указанных сферах, начиная с документарного аудита (работа с документами, предоставленными заказчиками) и присутственного (нахождение на рабочих местах заказчика). По результатам аудита подготавливается экспертное заключение, характеризующее пробелы в ведении деятельности и основные направления улучшения ситуации. При желании заказчика, по результатам аудита могут быть разработаны единичные документы, устраняющие нарушения, так и разработан полный комплект документации (охрана труда, кадровое делопроизводство, экология, пожарная безопасность, ГО и ЧС и т.д.), соответствующий последним законодательным актам в указанных сферах.</p>
@@ -369,7 +376,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-5">
+                                <div class="col-4">
                                     <ul class="team__list">
                                         <li class="team__list-item">Опыт работы в отрасли с 2015 года</li>
                                         <li class="team__list-item">Высокая гибкость: можем работать комплексно, оказывая услуги «под ключ», или выполнять для вас отдельные задачи</li>
@@ -415,6 +422,27 @@
                                 <div class="partners__slide swiper-slide">
                                     <img src="img/partners/e-businesssuite.svg" alt="Логотип партнера">
                                 </div>
+                                <div class="partners__slide swiper-slide">
+                                    <img src="img/partners/Federation_of_Small_Businesses.svg" alt="Логотип партнера">
+                                </div>
+                                <div class="partners__slide swiper-slide">
+                                    <img src="img/partners/Bloomberg_Businessweek.svg" alt="Логотип партнера">
+                                </div>
+                                <div class="partners__slide swiper-slide">
+                                    <img src="img/partners/BusinessWire.svg" alt="Логотип партнера">
+                                </div>
+                                <div class="partners__slide swiper-slide">
+                                    <img src="img/partners/BusinessWorld.svg" alt="Логотип партнера">
+                                </div>
+                                <div class="partners__slide swiper-slide">
+                                    <img src="img/partners/businessoptix.com.svg" alt="Логотип партнера">
+                                </div>
+                                <div class="partners__slide swiper-slide">
+                                    <img src="img/partners/continental.svg" alt="Логотип партнера">
+                                </div>
+                                <div class="partners__slide swiper-slide">
+                                    <img src="img/partners/e-businesssuite.svg" alt="Логотип партнера">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -428,7 +456,7 @@
         <div class="why__card-icon">
             <img src="img/icons/ph_certificate-light.svg" alt="Иконка">
         </div>
-        <h3 class="why__card-name">Высокий уровень компетенции</h3>
+        <h3 class="why__card-name">Высокий <br> уровень компетенции</h3>
         <p class="why__card-desc">Наши специалисты обладают уверенной компетентностью во всем, что касается охраны труда, охраны окружающей среды, кадрового делопроизводства и профессионального обучения.</p>
     </div>
 </div><div class="col-3">
@@ -436,7 +464,7 @@
         <div class="why__card-icon">
             <img src="img/icons/iconoir_doc-search.svg" alt="Иконка">
         </div>
-        <h3 class="why__card-name">Глубокое погружение в специфику</h3>
+        <h3 class="why__card-name">Глубокое погружение в&nbsp;специфику</h3>
         <p class="why__card-desc">При работе с каждой организацией и с каждым клиентом мы тщательно изучаем специфику и все особенности отрасли конкретного предприятия. Это обеспечивает максимально релевантные решения по всем вопросам.</p>
     </div>
 </div><div class="col-3">
@@ -464,22 +492,34 @@
                         <h2 class="scheme__title title">прозрачная схема работы</h2>
                         <ol class="scheme__list">
                             <li class="scheme__item">
-                                Оставьте заявку на сайте или позвоните нам
+                                <span class="scheme__item-text">
+                                    Оставьте заявку на сайте или&nbsp;позвоните нам
+                                </span>
                             </li>
                             <li class="scheme__item">
-                                Обсуждение вопросов и уточнение деталей
+                                <span class="scheme__item-text">
+                                    Обсуждение вопросов и уточнение деталей
+                                </span>
                             </li>
                             <li class="scheme__item">
-                                Подписание <br> договора
+                                <span class="scheme__item-text">
+                                    Подписание <br> договора
+                                </span>
                             </li>
                             <li class="scheme__item">
-                                Оплата в согласованном объеме
+                                <span class="scheme__item-text">
+                                    Оплата в согласованном <br> объеме
+                                </span>
                             </li>
                             <li class="scheme__item">
-                                Оказание услуги со строгим соблюдением сроков и условий
+                                <span class="scheme__item-text">
+                                    Оказание услуги со строгим соблюдением сроков и условий
+                                </span>
                             </li>
                             <li class="scheme__item">
-                                Подписание закрывающих документов
+                                <span class="scheme__item-text">
+                                    Подписание закрывающих документов
+                                </span>
                             </li>
                         </ol>
                     </div>
@@ -491,32 +531,29 @@
     </div>
 </footer>
             <div id="callback" class="popup">
-    <button type="button" data-fancybox-close class="popup__close icon-cross"></button>
-    <div class="popup__body">
-        <h2 class="popup__title title-md-desktop title-sm">Обсудим ваш проект?</h2>
-        <p class="popup__subtitle subtitle-desktop">Подробно ответим на вопросы, и проконсультируем по выбору индивидуального решения</p>
-        <form action="#" class="popup__form form">
-            <input type="tel" name="phone" class="form__control" placeholder="Номер телефона">
-            <button type="submit" class="form__btn btn btn-secondary icon-emblem-up">Заказать звонок</button>
-            <div class="form__privacy">
-                Отправляя данную форму вы соглашаетесь с <a href="">политикой обработки персональных данных</a>
-            </div>
-        </form>
-    </div>
-</div>
-<div id="success-submit" class="popup">
-    <button type="button" data-fancybox-close class="popup__close icon-cross"></button>
-    <div class="popup__body text-center">
-        <h2 class="popup__title title-md-desktop title-sm">Спасибо за заявку</h2>
-        <p class="popup__subtitle subtitle-desktop">Менеджер свяжется с вами в течении 15 минут</p>
-    </div>
-</div>
-<div id="error-submit" class="popup">
-    <button type="button" data-fancybox-close class="popup__close icon-cross"></button>
-    <div class="popup__body text-center">
-        <h2 class="popup__title title-md-desktop title-sm">Упс, что-то пошло не так</h2>
-        <p class="popup__subtitle subtitle-desktop">Пожалуйста, повторите попытку позже</p>
-    </div>
+    <button type="button" data-fancybox-close class="popup__close icon-close"></button>
+    <h2 class="popup__title title-md-desktop title-sm">Заказать звонок</h2>
+    <form action="#" class="popup__form form">
+        <div class="form__field">
+            <label for="full_name" class="form__label">ФИО:</label>
+            <input type="text" name="full_name" id="full_name" class="form__control _error" placeholder="Укажите ваше имя" required>
+        </div>
+        <div class="form__field">
+            <label for="phone" class="form__label">Телефон:</label>
+            <input type="tel" name="phone" id="phone" class="form__control" required>
+        </div>
+        <div class="form__field">
+            <label for="organization" class="form__label">Название организации или ИНН:</label>
+            <input type="text" name="organization" id="organization" class="form__control">
+        </div>
+        <div class="form__field">
+            <label class="form__checkbox">
+                <input type="checkbox" name="agree" class="form__checkbox-input hidden" id="agree_terms" required>
+                <span class="form__checkbox-text">Даю согласие на <a href="" target="_blank">обработку персональных данных</a></span>
+            </label>
+        </div>
+        <button type="submit" class="form__btn btn btn-secondary icon-arrows">заказать звонок</button>
+    </form>
 </div>
             <!-- plugins -->
 <script src="js/libs/fancybox.umd.js"></script>

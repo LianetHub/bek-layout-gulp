@@ -8,7 +8,7 @@
 }
 
 .fancybox__backdrop {
-	background: rgba(4, 24, 30, 0.64);
+	background: rgba(14, 22, 65, 0.7);
 }
 
 .fancybox__content {
@@ -26,11 +26,11 @@
 	background: #fff;
 	color: $text;
 	overflow-y: auto;
-	margin-left: auto;
-	@media (min-width: $md4) {
-		border-radius: 0.5rem 0rem 0rem 0.5rem;
-		max-width: 36.25rem;
-	}
+	position: relative;
+	border-radius: 0.25rem;
+	max-width: 47.1875rem;
+	width: 100%;
+	padding: 5.63rem 7.88rem;
 	// .popup__body
 	&__body {
 		display: flex;
@@ -39,47 +39,36 @@
 		justify-content: center;
 		gap: 1rem;
 		padding: 2.25rem 1rem 1rem;
-		min-height: 100vh;
+
 		@media (min-width: $md4) {
 			padding: 3rem 2.25rem 2.25rem 2.25rem;
 		}
 	}
 	// .popup__close
 	&__close {
-		font-size: 1.25rem;
-		background: $text;
-		color: #fff;
+		font-size: 1.5rem;
 		position: absolute;
-		top: 1rem;
-		right: 1rem;
-		width: 1.25rem;
-		height: 1.25rem;
-		font-size: 0.75rem;
-		border-radius: 50%;
-		transition: background-color 0.3s ease;
+		top: 2.12rem;
+		right: 2.12rem;
+		width: 1.5rem;
+		height: 1.5rem;
+		transition: color 0.3s ease;
 		@media (any-hover: hover) {
 			&:hover {
-				background: $text;
+				color: #f06868;
 			}
 		}
 	}
 	// .popup__title
 	&__title {
-	}
-	// .popup__subtitle
-	&__subtitle {
-		color: $text;
-		line-height: 150%;
+		text-align: center;
+		font-size: 2.125rem;
+		font-weight: 500;
+		line-height: 129.412%;
+		text-transform: uppercase;
 	}
 	// .popup__form
 	&__form {
-		flex: 1 1 auto;
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-		align-items: flex-start;
-		.form__btn {
-			margin-top: auto;
-		}
+		margin-top: 1.81rem;
 	}
 }
