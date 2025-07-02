@@ -190,6 +190,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 target.classList.add('active');
             }
         }
+        // Открытие/закрытие списка контантов на мобильных устройствах
+        if (target.matches('.header__phones-toggler')) {
+            target.nextElementSibling.classList.toggle('active');
+        }
 
         // Закрытие всех меню при клике вне области меню услуг или подменю
         if (!target.closest('.header__services-block') && !target.closest('.menu__arrow') && !target.classList.contains('menu__arrow')) {
